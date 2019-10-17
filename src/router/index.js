@@ -37,59 +37,7 @@ export const constantRouterMap = [
       component: () => import('@/views/dashboard/index')
     }]
   },
-  // {
-  //   path: '/',
-  //   component: Layout,
-  //   redirect: '/projects',
-  //   // name: 'projects',
-  //   // hidden: true,
-  //   children: [{
-  //     path: 'projects',
-  //     meta: { title: '项目管理', icon: 'example' },
-  //     component: () => import('@/views/project/index.vue')
-  //   }]
-  // },
-  {
-    path: '/projects',
-    component: Layout,
-    name: 'projects',
-    meta: { title: '项目管理', icon: 'example' },
-    children: [
-      {
-        path: 'project',
-        name: 'project',
-        // @表示src
-        component: () => import('@/views/project/index.vue'),
-        meta: { title: '项目管理' }
-      }
-    ]
-  },
-  {
-    path: '/release',
-    component: Layout,
-    name: '代码上线',
-    meta: { title: '代码上线', icon: 'user' },
-    children: [
-      {
-        path: 'apply',
-        name: '申请上线',
-        component: () => import('@/views/release/apply/index'),
-        meta: { title: '申请上线', icon: 'user' }
-      },
-      {
-        path: 'list',
-        name: '上线列表',
-        component: () => import('@/views/release/list/index'),
-        meta: { title: '上线列表', icon: 'user' }
-      },
-      {
-        path: 'history',
-        name: '上线历史',
-        component: () => import('@/views/release/history/index'),
-        meta: { title: '上线历史', icon: 'table' }
-      }
-    ]
-  },
+
   {
     path: '/users',
     component: Layout,
@@ -105,6 +53,14 @@ export const constantRouterMap = [
         meta: { title: '用户' }
       },
       {
+        path: 'roles',
+        name: 'roles',
+        // permission: 'auth.add_permission',
+        // @表示src
+        component: () => import('@/views/roles'),
+        meta: { title: '角色' }
+      },
+      {
         path: 'groups',
         name: 'groups',
         // permission: 'auth.add_permission',
@@ -115,38 +71,38 @@ export const constantRouterMap = [
     ]
   },
 
-  // {
-  //   path: '/books',
-  //   component: Layout,
-  //   // redirect: '/dashboard',
-  //   name: '图书管理系统',
-  //   meta: { title: '图书管理系统', icon: 'example' },
-  //   children: [
-  //     {
-  //       path: 'book',
-  //       name: '图书',
-  //       // @表示src
-  //       component: () => import('@/views/books/book/index'),
-  //       meta: { title: '图书', icon: 'table' }
-  //     },
-  //     {
-  //       path: 'author',
-  //       name: '作者',
-  //       permission: 'books.add_book',
-  //       // @表示src
-  //       component: () => import('@/views/books/author/index'),
-  //       meta: { title: '作者', icon: 'table' }
-  //     },
-  //     {
-  //       path: 'publish',
-  //       name: '出版商',
-  //       // permission: 'resources.add_ip',
-  //       // @表示src
-  //       component: () => import('@/views/books/publish/index'),
-  //       meta: { title: '出版商', icon: 'table' }
-  //     }
-  //   ]
-  // },
+  {
+    path: '/books',
+    component: Layout,
+    // redirect: '/dashboard',
+    name: '图书管理系统',
+    meta: { title: '图书管理系统', icon: 'example' },
+    children: [
+      {
+        path: 'book',
+        name: '图书',
+        // @表示src
+        component: () => import('@/views/books/book/index'),
+        meta: { title: '图书', icon: 'table' }
+      },
+      {
+        path: 'author',
+        name: '作者',
+        permission: 'books.add_book',
+        // @表示src
+        component: () => import('@/views/books/author/index'),
+        meta: { title: '作者', icon: 'table' }
+      },
+      {
+        path: 'publish',
+        name: '出版商',
+        // permission: 'resources.add_ip',
+        // @表示src
+        component: () => import('@/views/books/publish/index'),
+        meta: { title: '出版商', icon: 'table' }
+      }
+    ]
+  },
 
   {
     path: '/workorder',

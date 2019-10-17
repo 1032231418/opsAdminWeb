@@ -18,6 +18,7 @@ router.beforeEach((to, from, next) => {
       // 如果你的name长度为0
       if (store.getters.name.length === 0) {
         store.dispatch('GetInfo').then(res => { // 拉取用户信息
+          console.log(res)
           next()
         }).catch((err) => {
           console.log(err)

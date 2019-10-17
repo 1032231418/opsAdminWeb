@@ -50,7 +50,7 @@
   </div>
 </template>
 <script>
-import moment from 'moment'
+// import moment from 'moment'
 import { checkPermission } from '@/utils/auth'
 export default {
   name: 'WorkorderList',
@@ -100,7 +100,7 @@ export default {
       if (date === undefined) {
         return ''
       }
-      return moment(date).format('YYYY-MM-DD HH:MM:ss')
+      // return moment(date).format('YYYY-MM-DD HH:MM:ss')
     }
   }
 }

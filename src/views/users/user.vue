@@ -1,13 +1,13 @@
 <template>
   <div class="app-container">
     <el-row>
-      <el-col :span="12">
+      <el-col :span="5">
         <!--@keyup.enter.native表示回车也调用handleSearch方法-->
         <el-input v-model="params.username" placeholder="搜索用户名" @keyup.enter.native="handleSearch">
           <el-button slot="append" icon="el-icon-search" @click="handleSearch"/>
         </el-input>
       </el-col>
-      <el-col :span="12" align="right" style="padding-right:20px;">
+      <el-col :span="19" align="right" style="padding-right:20px;">
         <el-button v-if="addGroupPerm" type="primary" @click="addUserVisible=true">添加用户</el-button>
       </el-col>
     </el-row>
